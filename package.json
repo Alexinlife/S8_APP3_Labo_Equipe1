@@ -1,0 +1,17 @@
+{
+  "name": "github-actions-lab",
+  "version": "1.0.0",
+  "description": "Mini projet Node.js pour se familiariser avec GitHub Actions.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node tests/basic.test.js",
+    "build": "mkdir -p dist && cp src/index.js dist/index.js && cp src/index.html dist/index.html",
+    "preview": "npx serve dist"
+  },
+  "author": "Université de Sherbrooke - APP Projet Investigation Numérique",
+  "license": "MIT",
+  "dependencies": {
+    "dayjs": "^1.11.19"
+  }
+}
