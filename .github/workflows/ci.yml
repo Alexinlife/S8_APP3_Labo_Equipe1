@@ -1,5 +1,7 @@
 name: CI Demo
-on: [push]
+on: 
+  push:
+  pull_request:
 jobs:
   hello:
     runs-on: ubuntu-latest
@@ -23,3 +25,10 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Run only on main
+        if: github.ref == 'refs/heads/main'
+        run: echo "This runs only on main!"
+
+      - name: Build project
+        run: npm run build
