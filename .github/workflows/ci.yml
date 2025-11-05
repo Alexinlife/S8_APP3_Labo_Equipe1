@@ -3,6 +3,10 @@ on:
   push:
   pull_request:
 jobs:
+  permissions:
+    contents: read
+    pages: write
+    id-token: write
   hello:
     runs-on: ubuntu-latest
     steps:
@@ -32,3 +36,12 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # ou ./build selon votre projet
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/deploy-pages@v4
