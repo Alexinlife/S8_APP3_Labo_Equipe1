@@ -6,3 +6,9 @@ jobs:
     steps:
       - name: Print hello
         run: echo "Hello from GitHub Actions!"
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: List files
+        run: ls -la
