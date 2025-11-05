@@ -2,11 +2,11 @@ name: CI Demo
 on: 
   push:
   pull_request:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
-  permissions:
-    contents: read
-    pages: write
-    id-token: write
   hello:
     runs-on: ubuntu-latest
     steps:
